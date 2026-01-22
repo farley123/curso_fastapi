@@ -5,8 +5,7 @@ from shared.database import engine, Base
 from contas_a_pagar.routers import contas_a_pagar_e_receber_router
 from contas_a_pagar.models.conta_a_pagar_receber_model import ContaPagarReceber
 
-# Base.metadata.drop_all(bind=engine)
-# Base.metadata.create_all(bind=engine)
+
 app = FastAPI()
 
 
