@@ -7,6 +7,7 @@ from alembic import context
 from shared.database import Base
 # type: ignore
 from contas_a_pagar.models.conta_a_pagar_receber_model import ContaPagarReceber
+from contas_a_pagar.models.fornecedor_cliente_model import FornecedorCliente
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
