@@ -50,6 +50,7 @@ def test_deve_listar_contas_a_pagar_e_receber():
             "descricao": "Aluguel",
             "valor": 1000.5,
             "tipo": "PAGAR",
+            "fornecedor": None,
         },
     ]
 
@@ -70,6 +71,7 @@ def test_deve_criar_contas_a_pagar_e_receber():
         "descricao": "Curso python",
         "valor": 333.0,
         "tipo": "PAGAR",
+        "fornecedor": None
     }
 
 
@@ -152,3 +154,5 @@ def test_deve_retornar_nao_encontrado_para_id_nao_existente():
     Base.metadata.create_all(bind=engine)
     response_get = client.get("/contas-a-pagar-e-receber/100")
     assert response_get.status_code == 404
+
+
