@@ -1,4 +1,5 @@
 from typing import List
+
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
@@ -16,8 +17,6 @@ class FornecedorClienteResponse(BaseModel):
     nome: str
 
 
-
-
 class FornecedorClienteRequest(BaseModel):
     nome: str = Field(min_length=3, max_length=255)
 
@@ -31,6 +30,9 @@ def listar_fornecedor_cliente(db: Session = Depends(get_db)):
 @router.get("/{id_do_fornecedor_cliente", response_model=List[FornecedorClienteResponse])
 def obter_fornecedor_cliente_por_id(id_do_fornecedor_cliente: int, db: Session = Depends(get_db)) -> FornecedorCliente:
     return busca_fornecedor_cliente_por_id(id_do_fornecedor_cliente, db)
+
+
+
 
 
 @router.post("/", response_model=FornecedorClienteResponse, status_code=status.HTTP_201_CREATED)
